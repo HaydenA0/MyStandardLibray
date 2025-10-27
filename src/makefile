@@ -1,7 +1,6 @@
-
 main: *.c
-	clang *c -o main
+	clang *.c -o ./bin/main
 
-run:main
-	./main
+run: main
+	./bin/main
 
