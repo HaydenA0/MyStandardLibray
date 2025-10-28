@@ -1,14 +1,7 @@
 // my_string.c
+#include "my_string.h"
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct MyString
-{
-
-    char *string_proper;
-    int size;
-    int capacity;
-
-} MyString;
 int calculate_string_length(char *string)
 {
     int length = 0;
@@ -119,6 +112,13 @@ int insert_char(MyString *string, char character, int index)
     if (index < 0 || index > string->size)
     {
         return 1;
+    }
+    if (string->capacity == 0)
+    {
+        char s_character[1];
+        s_character[0] = character;
+        append_literal(string, s_character);
+        return 0;
     }
     if (string->size + 1 >= string->capacity)
     {

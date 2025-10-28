@@ -10,15 +10,15 @@ int my_open(const char *pathname, char read_write)
 {
     if (read_write == 'r')
     {
-        return open(pathname, O_RDONLY, 066);
+        return open(pathname, O_RDONLY, 0666);
     }
     if (read_write == 'w')
     {
-        return open(pathname, O_WRONLY, 066);
+        return open(pathname, O_WRONLY, 0666);
     }
     if (read_write == 'o')
     {
-        return open(pathname, O_RDWR, 066);
+        return open(pathname, O_RDWR, 0666);
     }
     else
     {
