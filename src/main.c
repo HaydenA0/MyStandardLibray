@@ -3,14 +3,20 @@
 
 int main(void)
 {
-    MyString string = new_string("");
-    printf("capacity : %d\n", string.capacity);
-    printf("size : %d\n", string.size);
-    insert_char(&string, '2', 0);
-    printf("capacity : %d\n", string.capacity);
-    printf("size : %d\n", string.size);
-    temp_print_string(&string);
-    destroy_string(&string);
+    MyString s1 = new_string("test");
+    MyString s2 = new_string("test");
+    MyString s3 = new_string("Test");
 
-    return 0;
+    if (compare_strings(&s1, &s2))
+    {
+        printf("s1 and s2 are equal.\n"); // This will print
+    }
+    if (!compare_strings(&s1, &s3))
+    {
+        printf("s1 and s3 are not equal.\n"); // This will print
+    }
+
+    destroy_string(&s1);
+    destroy_string(&s2);
+    destroy_string(&s3);
 }

@@ -44,7 +44,6 @@ int my_read_full(MyString *file_string, int file_d, int count)
     }
     temp[bytes_read] = '\0';
     append_literal(file_string, temp);
-    lseek(file_d, 0, SEEK_SET);
     return 0;
 }
 
